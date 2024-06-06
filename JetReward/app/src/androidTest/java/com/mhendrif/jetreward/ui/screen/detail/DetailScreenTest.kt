@@ -28,7 +28,7 @@ class DetailScreenTest {
     val composeTestRule = createAndroidComposeRule<ComponentActivity>()
 
     private val fakeOrderReward = OrderReward(
-        reward = Reward(4, R.drawable.reward_4, "Jaket Hoodie Dicoding", 7500),
+        reward = Reward(4, R.drawable.reward_4, "Jaket Hoodie Dicoding", 1000),
         count = 0
     )
 
