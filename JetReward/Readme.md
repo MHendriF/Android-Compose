@@ -5,4 +5,6 @@
 * Bagaimana cara mengirimkan data antara halaman?
 * Bagaimana cara memanfaatkan Intent untuk navigasi ke aplikasi lain? 
 * Bagaimana cara mencari node menggunakan modifier Semantic? 
-* Bagaimana cara mencari node berdasarkan tag?
+* Bagaimana cara mencari node berdasarkan tag? 
+* Bagaimana cara membuat TestNavHostController? 
+* Bagaimana cara memeriksa halaman yang sedang tampil?

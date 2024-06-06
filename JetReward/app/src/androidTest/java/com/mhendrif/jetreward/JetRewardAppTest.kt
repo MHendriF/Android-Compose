@@ -6,9 +6,15 @@ import org.junit.Rule
 import org.junit.Test
 import androidx.activity.ComponentActivity
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.onNodeWithTag
+import androidx.compose.ui.test.onNodeWithText
+import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performScrollToIndex
 import androidx.navigation.compose.ComposeNavigator
 import androidx.navigation.testing.TestNavHostController
+import com.mhendrif.jetreward.model.FakeRewardDataSource
 import com.mhendrif.jetreward.ui.navigation.Screen
 import com.mhendrif.jetreward.ui.theme.JetRewardTheme
 
@@ -31,7 +37,14 @@ class JetRewardAppTest {
 
     @Test
     fun navHost_verifyStartDestination() {
-        val currentRoute = navController.currentBackStackEntry?.destination?.route
-        assertEquals(Screen.Home.route, currentRoute)
+        navController.assertCurrentRouteName(Screen.Home.route)
+    }
+
+    @Test
+    fun navHost_clickItem_navigatesToDetailWithData() {
+        composeTestRule.onNodeWithTag("RewardList").performScrollToIndex(10)
+        composeTestRule.onNodeWithText(FakeRewardDataSource.dummyRewards[10].title).performClick()
+        navController.assertCurrentRouteName(Screen.DetailReward.route)
+        composeTestRule.onNodeWithText(FakeRewardDataSource.dummyRewards[10].title).assertIsDisplayed()
     }
 }
