@@ -1,9 +1,5 @@
 package com.mhendrif.jetreward
 
-import org.junit.Assert.*
-import org.junit.Before
-import org.junit.Rule
-import org.junit.Test
 import androidx.activity.ComponentActivity
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.test.assertIsDisplayed
@@ -18,6 +14,9 @@ import androidx.navigation.testing.TestNavHostController
 import com.mhendrif.jetreward.model.FakeRewardDataSource
 import com.mhendrif.jetreward.ui.navigation.Screen
 import com.mhendrif.jetreward.ui.theme.JetRewardTheme
+import org.junit.Before
+import org.junit.Rule
+import org.junit.Test
 
 class JetRewardAppTest {
 
